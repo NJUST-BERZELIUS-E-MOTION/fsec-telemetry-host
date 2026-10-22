@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-msvc-debug",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "msvc", "-Config", "Debug"
+            ],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "build-msvc-release",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "msvc", "-Config", "Release"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "build-mingw-debug",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "mingw", "-Config", "Debug"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "build-mingw-release",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "mingw", "-Config", "Release"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "build-msvc-release-deploy",
+            "detail": "Release + windeployqt: 生成可直接拷贝运行的发布目录",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "msvc", "-Config", "Release", "-Deploy"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "build-mingw-release-deploy",
+            "detail": "MinGW Release + windeployqt: 生成可直接拷贝运行的发布目录",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                "${workspaceFolder}/scripts/build.ps1",
+                "-Toolchain", "mingw", "-Config", "Release", "-Deploy"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "shared" }
+        }
+    ]
+}

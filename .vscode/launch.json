@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (MSVC 2022)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/msvc/Debug/SerialJsonHost.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                { "name": "PATH", "value": "D:\\Qt6.11\\6.11.1\\msvc2022_64\\bin;${env:PATH}" }
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "build-msvc-debug"
+        },
+        {
+            "name": "Debug (MinGW 13.1)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/mingw/SerialJsonHost.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "D:\\Qt6.11\\6.11.1\\mingw_64\\bin;D:\\Qt6.11\\Tools\\mingw1310_64\\bin;${env:PATH}"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\Qt6.11\\Tools\\mingw1310_64\\bin\\gdb.exe",
+            "setupCommands": [
+                { "description": "Enable pretty printing for gdb", "text": "-enable-pretty-printing", "ignoreFailures": true }
+            ],
+            "preLaunchTask": "build-mingw-debug"
+        }
+    ]
+}

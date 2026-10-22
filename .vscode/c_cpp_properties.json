@@ -1,0 +1,35 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Qt6 SerialJsonHost",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/mingw/compile_commands.json",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "includePath": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/config",
+                "D:/Qt6.11/6.11.1/msvc2022_64/include",
+                "D:/Qt6.11/6.11.1/msvc2022_64/include/QtCore",
+                "D:/Qt6.11/6.11.1/msvc2022_64/include/QtGui",
+                "D:/Qt6.11/6.11.1/msvc2022_64/include/QtWidgets",
+                "D:/Qt6.11/6.11.1/msvc2022_64/include/QtSerialPort",
+                "D:/Qt6.11/6.11.1/mingw_64/include",
+                "D:/Qt6.11/6.11.1/mingw_64/include/QtCore",
+                "D:/Qt6.11/6.11.1/mingw_64/include/QtGui",
+                "D:/Qt6.11/6.11.1/mingw_64/include/QtWidgets",
+                "D:/Qt6.11/6.11.1/mingw_64/include/QtSerialPort"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE",
+                "WIN32",
+                "QT_CORE_LIB",
+                "QT_GUI_LIB",
+                "QT_WIDGETS_LIB",
+                "QT_SERIALPORT_LIB"
+            ]
+        }
+    ]
+}

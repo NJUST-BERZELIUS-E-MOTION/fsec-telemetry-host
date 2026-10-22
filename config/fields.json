@@ -1,0 +1,45 @@
+{
+  "_comment": "遥测字段显示/选择配置。key 必须与固件 Telemetry.c 输出的 JSON 键一致; group 用于字段选择分组; 顺序决定最新值行序与记录表列序; min/max 为合理范围(越界会标红并在曲线中剔除、计入异常), 可按需修改或删除。",
+  "fields": [
+    { "key": "rssi",       "label": "信号强度",      "unit": "dBm", "group": "包信息",     "decimals": 0, "min": -150, "max": 0 },
+    { "key": "config_id",  "label": "配置ID",        "unit": "",    "group": "包信息",     "decimals": 0, "min": 0,    "max": 255 },
+    { "key": "type",       "label": "类型",          "unit": "",    "group": "包信息",     "decimals": 0 },
+    { "key": "ts",         "label": "设备时间",      "unit": "ms",  "group": "包信息",     "decimals": 0, "min": 0, "max": 16777215 },
+
+    { "key": "hv_voltage",    "label": "电池箱电压", "unit": "V",  "group": "高压/电池",  "decimals": 0, "min": 0,    "max": 600 },
+    { "key": "hv_current",    "label": "电池箱电流", "unit": "A",  "group": "高压/电池",  "decimals": 1, "min": -800, "max": 800 },
+    { "key": "cell_max_v",    "label": "单体最高电压","unit": "V",  "group": "高压/电池",  "decimals": 3, "min": 0,    "max": 5 },
+    { "key": "cell_max_t",    "label": "单体最高温度","unit": "℃",  "group": "高压/电池",  "decimals": 1, "min": -40,  "max": 150 },
+    { "key": "bms_status",    "label": "BMS状态字",   "unit": "",    "group": "高压/电池",  "decimals": 0, "min": 0,    "max": 255 },
+
+    { "key": "lv_voltage",    "label": "低压电池电压","unit": "V",  "group": "低压",       "decimals": 1, "min": 0,    "max": 30 },
+
+    { "key": "accel_ratio",   "label": "加速踏板开度","unit": "%",  "group": "踏板",       "decimals": 1, "min": 0,    "max": 120 },
+    { "key": "brake_oilpressure","label": "制动油压",  "unit": "MPa","group": "踏板",       "decimals": 1, "min": 0,    "max": 10 },
+
+    { "key": "wheel_spd_lf",  "label": "左前轮线速度","unit": "m/s","group": "运动",       "decimals": 2, "min": -80,  "max": 80 },
+    { "key": "wheel_spd_rf",  "label": "右前轮线速度","unit": "m/s","group": "运动",       "decimals": 2, "min": -80,  "max": 80 },
+    { "key": "vehicle_speed", "label": "车速",        "unit": "m/s","group": "运动",       "decimals": 2, "min": -80,  "max": 80 },
+    { "key": "motor_rps",     "label": "电机轮端角速度","unit": "rev/s", "group": "运动",  "decimals": 2, "min": -500, "max": 500 },
+    { "key": "motor_speed",   "label": "电机轮端线速度","unit": "m/s",  "group": "运动",   "decimals": 2, "min": -150, "max": 150 },
+    { "key": "slip_ratio",    "label": "滑移率",      "unit": "",    "group": "运动",       "decimals": 3, "min": -5,   "max": 5 },
+    { "key": "target_torque", "label": "目标扭矩",    "unit": "N·m", "group": "运动",      "decimals": 0, "min": -300, "max": 300 },
+
+    { "key": "hv_power_limit","label": "高压功率限制","unit": "%",  "group": "TC/限制",    "decimals": 1, "min": 0,    "max": 120 },
+    { "key": "slip_limit",    "label": "滑移率限制",  "unit": "%",  "group": "TC/限制",    "decimals": 1, "min": 0,    "max": 120 },
+
+    { "key": "vehicle_status", "label": "车辆状态机",   "unit": "", "group": "状态/标志", "decimals": 0, "min": 0, "max": 255 },
+    { "key": "vehicle_flags",  "label": "组合标志字节", "unit": "", "group": "状态/标志", "decimals": 0, "min": 0, "max": 255 },
+    { "key": "acc_brk_timer",  "label": "油门刹车冲突计时", "unit": "", "group": "状态/标志", "decimals": 0, "min": 0, "max": 65535 },
+    { "key": "wss_online",     "label": "轮速传感器在线", "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+    { "key": "battery_online", "label": "电池箱在线",     "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+    { "key": "inverter_online","label": "逆变器在线",     "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+    { "key": "sc_closed",      "label": "安全接触器闭合", "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+    { "key": "acc_brk_conflict","label": "油门刹车冲突",  "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "activeIsBad": true, "min": 0, "max": 1 },
+    { "key": "pedal_unreliable","label": "踏板信号不可靠","unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "activeIsBad": true, "min": 0, "max": 1 },
+    { "key": "ready_btn",      "label": "待驶按钮按下",   "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+    { "key": "hv_btn",         "label": "上高压按钮按下", "unit": "", "group": "状态/标志", "decimals": 0, "isBool": true, "min": 0, "max": 1 },
+
+    { "key": "lora_tx_fifo_usage", "label": "TxFIFO占用", "unit": "包", "group": "LoRa", "decimals": 0, "min": 0, "max": 16 }
+  ]
+}

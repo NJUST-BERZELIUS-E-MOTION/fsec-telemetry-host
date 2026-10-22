@@ -1,0 +1,47 @@
+# ============================================================
+# SerialJsonHost (Qt6 串口 JSON 上位机) —— Git 忽略规则
+# ============================================================
+
+# ---- 构建产物 ----
+build/
+build-*/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+
+# ---- Qt / Visual Studio 临时文件 ----
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# ---- 编译数据库 / 缓存 ----
+compile_commands.json
+.cache/
+.vscode/ipch/
+*.pdb
+*.ilk
+*.obj
+
+# ---- 运行数据(记录/异常留证等) ----
+recordings/
+logs/
+*.log
+
+# ---- 打包产物(发布 zip 等) ----
+*.zip
+*.7z
+*.rar
+
+# ---- 参考/测试数据(大文件按需保留; 想入库就删掉下面两行) ----
+GSpot-*.data
+GSpot-*.vbo
+
+# ---- 系统/编辑器杂项 ----
+Thumbs.db
+desktop.ini
+.DS_Store
+*~

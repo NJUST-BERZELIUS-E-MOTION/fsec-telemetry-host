@@ -1,0 +1,51 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+    "configurePresets": [
+        {
+            "name": "msvc",
+            "displayName": "MSVC 2022 x64 + Qt 6.11.1 (msvc2022_64)",
+            "description": "Visual Studio 17 2022 生成器, 多配置 Debug/Release, 自动使用 VS 工具链",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/msvc",
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "D:/Qt6.11/6.11.1/msvc2022_64"
+            }
+        },
+        {
+            "name": "mingw",
+            "displayName": "MinGW 13.1 x64 + Qt 6.11.1 (mingw_64) Debug",
+            "description": "Ninja 生成器, Qt 自带 MinGW 13.1, 单配置 Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/mingw",
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "D:/Qt6.11/6.11.1/mingw_64",
+                "CMAKE_C_COMPILER": "D:/Qt6.11/Tools/mingw1310_64/bin/gcc.exe",
+                "CMAKE_CXX_COMPILER": "D:/Qt6.11/Tools/mingw1310_64/bin/g++.exe",
+                "CMAKE_MAKE_PROGRAM": "D:/Qt6.11/Tools/Ninja/ninja.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "mingw-release",
+            "displayName": "MinGW 13.1 x64 + Qt 6.11.1 (mingw_64) Release",
+            "description": "Ninja 生成器, Qt 自带 MinGW 13.1, 单配置 Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/mingw-release",
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "D:/Qt6.11/6.11.1/mingw_64",
+                "CMAKE_C_COMPILER": "D:/Qt6.11/Tools/mingw1310_64/bin/gcc.exe",
+                "CMAKE_CXX_COMPILER": "D:/Qt6.11/Tools/mingw1310_64/bin/g++.exe",
+                "CMAKE_MAKE_PROGRAM": "D:/Qt6.11/Tools/Ninja/ninja.exe",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        { "name": "msvc-debug",   "configurePreset": "msvc", "configuration": "Debug" },
+        { "name": "msvc-release", "configurePreset": "msvc", "configuration": "Release" },
+        { "name": "mingw",        "configurePreset": "mingw", "configuration": "Debug" },
+        { "name": "mingw-release", "configurePreset": "mingw-release", "configuration": "Release" }
+    ]
+}
